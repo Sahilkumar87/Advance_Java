@@ -1,3 +1,6 @@
+// javac firstSwingApp.java && java firstSwingApp
+
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -5,8 +8,8 @@ import java.awt.event.ActionListener;
 public class studentForm implements ActionListener {
 
     JFrame jFrame;
-    JLabel l1;
-    JTextField name;
+    JLabel l1,l2;
+    JTextField name, email;
     JButton save;
 
     studentForm(){
@@ -27,6 +30,11 @@ public class studentForm implements ActionListener {
         jFrame.setSize(400, 300);
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
+
+        
+        jFrame.setDefaultCloseOperation(
+                JFrame.EXIT_ON_CLOSE
+        );
     }
 
 
@@ -37,6 +45,7 @@ public class studentForm implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String name1 = name.getText();
-        JOptionPane.showMessageDialog(jFrame, "Student Name is " + name);
+        String email1 = email.getText();
+        JOptionPane.showMessageDialog(jFrame, "Student Name is " + name1 + "Student email is " + email1);
     }
 }
